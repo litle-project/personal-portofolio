@@ -8,6 +8,7 @@ window.onload = () => {
     const componentLocation = element.getAttribute('src');
     const node = document.createElement('div');
 
+    // load component file
     const request = new XMLHttpRequest();
     request.open("GET", `${path}/${componentLocation}`, false);
     request.send(null);
@@ -21,7 +22,7 @@ window.onload = () => {
     // Apply script tag
     const header = document.querySelector('head');
     const script = node.getElementsByTagName('script');
-    const scriptContent = script[0].innerHTML || '';
+    const scriptContent = script.length > 0 ? script[0].innerHTML : '';
     const scriptNode = document.createElement('script');
     scriptNode.innerHTML = scriptContent;
     header.appendChild(scriptNode);
