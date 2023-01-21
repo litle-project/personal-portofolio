@@ -1,6 +1,6 @@
 **Precruitment**
 
- - phyton version 2 or higher
+ - phyton or PHP or node js
  - docker version 2.x
  - docker compose
 
