@@ -1,6 +1,10 @@
-window.onload = () => {
+window.addEventListener("load", (event) => {
   const components = document.querySelectorAll('component');
 
+  componentImplementation(components);
+}, false);
+
+const componentImplementation = (components) => {
   components.forEach((component, index) => {
     const path = './components';
     component.setAttribute('id', `component-${index}`);

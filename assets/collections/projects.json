@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "lifespa",
+    "domain": "https://lifespa.com.sg/",
+    "images": null,
+    "description": "Content Management System for manage order, user, and stuff",
+    "type": "fullstack",
+    "tech": [
+      "native PHP",
+      "native CSS"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "petshop",
+    "domain": "https://lifespa.com.sg/",
+    "images": null,
+    "description": "Content Management System for manage order, user, and stuff",
+    "type": "fullstack",
+    "tech": [
+      "native PHP",
+      "native CSS"
+    ]
+  }
+]

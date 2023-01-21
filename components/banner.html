@@ -4,12 +4,6 @@
   }
 </style>
 
-<script type="text/javascript">
-  const download = () => {
-    return window.open('../assets/files/resume.pdf')
-  }
-</script>
-
 <div class="banner-content">
   <div class="w-2/3 mx-auto pt-20 items-center flex flex-wrap">
     <div class="md:w-1/2 w-full md:order-first order-last flex flex-col gap-8">
@@ -23,7 +17,7 @@
       </div>
       <div class="action flex flex-row gap-10">
         <button type="button" class="text-Currently bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900" onclick="alert('click')">Hire me</button>
-        <button class="text-yellow-400" type="button" onclick="download()">Download Resume</button>
+        <button class="text-yellow-400 download" type="button">Download Resume</button>
       </div>
     </div>
     <div class="md:w-1/2 w-full md:order-last order-first">
@@ -31,3 +25,12 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  document.addEventListener('click', function (event) {
+    if (!event.target.matches('.download')) return;
+    event.preventDefault();
+
+    return window.open('../assets/files/resume.pdf')
+  }, false);
+</script>

@@ -1,7 +1,7 @@
 <script type="text/javascript">
   const menu = [
     { id: 1, text: 'Home', url: '/', active: false },
-    { id: 2, text: 'Article', url: '/article.html', active: false },
+    { id: 2, text: 'Article', url: '/article', active: false },
     { id: 3, text: 'Project', url: '/project.html', active: false },
     { id: 4, text: 'Skill', url: '/skill.html', active: false },
     { id: 5, text: 'Contact', url: '/contact.html', active: false },
@@ -12,14 +12,14 @@
 
   setupMenu(menu);
 
-  menus.map((menu) => {
+  menus.map((menu, index) => {
     const template = `<li>
       <a
-        href="${menu.url}"
+        id="menu-${index}"
         class="
           ${menu.active ? 'text-yellow-400' : 'text-gray-700'}
           rounded hover:bg-gray-100
-          block py-2 pl-3 pr-4
+          block py-2 pl-3 pr-4 cursor-pointer
           md:hover:bg-transparent md:border-0
           md:hover:text-yellow-400 md:p-0 dark:text-gray-400
           md:dark:hover:text-white
@@ -34,14 +34,16 @@
     const node = document.createElement('div');
     node.innerHTML = template;
     node.onclick = function () {
-      const update = [...menus];
-      const index = update.findIndex((item) => item.active === true);
-      const menuById = update.findIndex((item) => item.id === menu.id)
-      if (index > -1) update[index].active = false;
-      if (menuById > -1) update[menuById].active = true;
+      // const update = [...menus];
+      // const index = update.findIndex((item) => item.active === true);
+      // const menuById = update.findIndex((item) => item.id === menu.id)
+      // if (index > -1) update[index].active = false;
+      // if (menuById > -1) update[menuById].active = true;
 
-      setupMenu(update);
+      handleLocation(menu.url);
+      // setupMenu(update);
     }
+
     component.appendChild(node);
   });
 </script>
